@@ -1,0 +1,7 @@
+USE DbmsProject 
+GO 
+CREATE PROCEDURE GetStores
+AS
+BEGIN
+	SELECT * FROM Store
+END

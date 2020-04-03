@@ -1,0 +1,37 @@
+﻿@model ListViewModel<Car>
+
+@{
+  ViewData["Title"] = "Автомобили";
+  var classes = ViewData["Classes"] as IEnumerable<CarClass>;
+  int currentClass = (int)ViewData["CurrentClass"];
+
+  var text = currentClass != 0
+  ? classes.FirstOrDefault(car => car.Id == currentClass)?.Name
+  : "Все";
+}
+
+<div class="row">
+  <div class="col-2">
+    <div class="dropdown mt-2">
+      <a class="btn btn-secondary dropdown-toggle" asp-action="Index" asp-controller="Car" role="button"
+        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        @text
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" asp-action="Index" asp-controller="Car">Все</a>
+        @foreach (var item in classes)
+        {
+          <a class="dropdown-item" asp-action="Index" asp-controller="Car" asp-route-carClass="@item.Id"
+          asp-route-page="1">@item.Name</a>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="col-10">
+    <div class="card-group" id="list">
+      <partial name="_ListPartial" model="@Model" />
+    </div>
+    <pager page-current="@Model.CurrentPage" page-total="@Model.TotalPages" action="Index" controller="Car"
+      class-id="@currentClass"></pager>
+  </div>
+</div>

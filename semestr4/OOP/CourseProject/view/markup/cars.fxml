@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="car_rental.controllers.CarController">
+    <left>
+        <VBox prefHeight="400.0" prefWidth="155.0" style="-fx-background-color: #001824;" BorderPane.alignment="CENTER">
+            <children>
+                <Button mnemonicParsing="false" onAction="#showAllItems" prefHeight="49.0" prefWidth="155.0" stylesheets="@../style/MenuButon.css" text="Show cars">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#addItem" prefHeight="49.0" prefWidth="155.0" stylesheets="@../style/MenuButon.css" text="Add car">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#findItems" prefHeight="49.0" prefWidth="155.0" stylesheets="@../style/MenuButon.css" text="Find cars">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#back" prefHeight="49.0" prefWidth="155.0" stylesheets="@../style/MenuButon.css" text="Back">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <AnchorPane prefHeight="400.0" prefWidth="571.0" style="-fx-background-color: #142428;" BorderPane.alignment="CENTER">
+            <children>
+                <TableView fx:id="table" editable="true" layoutX="15.0" layoutY="18.0" prefHeight="363.0" prefWidth="580.0" stylesheets="@../style/Table.css" visible="false" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="19.0">
+                    <columns>
+                        <TableColumn fx:id="id" prefWidth="92.66668701171875" text="Car id" />
+                        <TableColumn fx:id="company" prefWidth="94.66667175292969" text="Company" />
+                        <TableColumn fx:id="model" prefWidth="101.3333740234375" text="Model" />
+                        <TableColumn fx:id="volume" minWidth="0.0" prefWidth="145.33334350585938" text="Volume" />
+                        <TableColumn fx:id="power" minWidth="0.0" prefWidth="135.3333740234375" text="Power" />
+                  <TableColumn fx:id="price" minWidth="0.0" onEditCommit="#changePriceHandler" prefWidth="135.3333740234375" text="Price" />
+                  <TableColumn fx:id="isFree" minWidth="0.0" prefWidth="135.3333740234375" text="Is free" />
+                  <TableColumn fx:id="deleteButtonsColumn" minWidth="0.0" prefWidth="135.3333740234375" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <AnchorPane fx:id="form" layoutX="107.0" layoutY="43.0" prefHeight="360.0" prefWidth="380.0" visible="false">
+                    <children>
+                        <Label layoutX="93.0" layoutY="23.0" prefHeight="25.0" prefWidth="79.0" stylesheets="@../style/Label.css" text="Company:">
+                            <effect>
+                                <Bloom />
+                            </effect>
+                        </Label>
+                        <Label layoutX="117.0" layoutY="68.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@../style/Label.css" text="Model:">
+                            <effect>
+                                <Bloom />
+                            </effect>
+                        </Label>
+                        <Label layoutX="109.0" layoutY="110.0" prefHeight="25.0" prefWidth="59.0" stylesheets="@../style/Label.css" text="Volume:">
+                            <effect>
+                                <Bloom />
+                            </effect>
+                        </Label>
+                        <Label layoutX="115.0" layoutY="156.0" prefHeight="25.0" prefWidth="49.0" stylesheets="@../style/Label.css" text="Power:">
+                            <effect>
+                                <Bloom />
+                            </effect>
+                        </Label>
+                  <Label layoutX="127.0" layoutY="197.0" prefHeight="25.0" prefWidth="41.0" stylesheets="@../style/Label.css" text="Price:">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <Label fx:id="isFreeLabel" layoutX="117.0" layoutY="241.0" prefHeight="25.0" prefWidth="48.0" stylesheets="@../style/Label.css" text="Is free:">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                        <TextField fx:id="companyField" layoutX="183.0" layoutY="21.0" promptText="Company" stylesheets="@../style/TextField.css" />
+                        <TextField fx:id="modelField" layoutX="183.0" layoutY="66.0" promptText="Model" stylesheets="@../style/TextField.css" />
+                        <TextField fx:id="volumeField" layoutX="182.0" layoutY="110.0" promptText="Volume" stylesheets="@../style/TextField.css" />
+                        <TextField fx:id="powerField" layoutX="181.0" layoutY="154.0" promptText="Power" stylesheets="@../style/TextField.css" />
+                  <TextField fx:id="priceField" layoutX="181.0" layoutY="195.0" promptText="Price" stylesheets="@../style/TextField.css" />
+                  <TextField fx:id="isFreeField" layoutX="181.0" layoutY="239.0" promptText="Is free" stylesheets="@../style/TextField.css" />
+                      <Button fx:id="registerButton" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="163.0" layoutY="301.0" mnemonicParsing="false" onAction="#registerCar" stylesheets="@../style/ActionButton.css" text="Add" textAlignment="CENTER">
+                          <effect>
+                              <Bloom />
+                          </effect>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                      <Button fx:id="findButton" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="162.0" layoutY="301.0" mnemonicParsing="false" onAction="#searchCar" stylesheets="@../style/ActionButton.css" text="Find" textAlignment="CENTER">
+                          <effect>
+                              <Bloom />
+                          </effect>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                    </children>
+                </AnchorPane>
+            </children></AnchorPane>
+    </center>
+</BorderPane>

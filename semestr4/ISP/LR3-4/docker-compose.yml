@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13.0-alpine
+    container_name: postgres
+    restart: always
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=lr3
+      - POSTGRES_USER=mishanya
+      - POSTGRES_PASSWORD=Miha_2002
+      - POSTGRES_HOST=db
+    ports:
+      - "5435:5432"
+
+  bot:
+    image: krishtapovich/weather_bot:lr3-4
+    environment:
+      - "TZ=Europe/Minsk"
+    container_name: weather_bot
+    restart: always
+    depends_on:
+      - db
+    command: python3 main.py

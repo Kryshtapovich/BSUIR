@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["DOM", "ESNext"],
+    "strict": true,
+    "sourceMap": true,
+    "target": "esnext",
+    "paths": {
+      "@Svg/*": ["./assets/svg/*"],
+      "@Components/*": ["./src/Components/*"],
+      "@Pages/*": ["./src/Pages/*"],
+      "@Utils/*": ["./src/Utils/*"]
+    }
+  }
+}

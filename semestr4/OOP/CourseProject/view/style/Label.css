@@ -1,0 +1,5 @@
+.label {
+    -fx-font-size: 16;
+    -fx-text-fill: #00e3bd;
+    -fx-blend-mode: color-dodge;
+}

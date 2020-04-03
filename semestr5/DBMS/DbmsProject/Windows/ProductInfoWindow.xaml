@@ -1,0 +1,23 @@
+﻿<Window x:Class="DbmsProject.Windows.ProductInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DbmsProject.Windows"
+        mc:Ignorable="d"
+        Title="ProductInfoWindow" Height="300" Width="509">
+    <Grid>
+        <Label Name="Name" Content="Name" HorizontalAlignment="Left" Margin="354,46,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Arial"/>
+        <Label Name="Description" Content="Description" HorizontalAlignment="Left" Margin="354,90,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Arial"/>
+        <Label Name="Category" Content="Category" HorizontalAlignment="Left" Margin="354,141,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Arial"/>
+        <Label Name="Price" Content="Price" HorizontalAlignment="Left" Margin="354,187,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Arial"/>
+        <Label Name ="Image" Content="Url" HorizontalAlignment="Left" Margin="57,124,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Arial" Width="136" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Name="Next" Content="Next" HorizontalAlignment="Left" Margin="198,127,0,0" VerticalAlignment="Top" Click="Next_Click"/>
+        <Button Name="Prev" Content="Prev" HorizontalAlignment="Left" Margin="25,129,0,0" VerticalAlignment="Top" Click="Prev_Click"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="294,46,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" FontFamily="Arial"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="265,90,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" FontFamily="Arial"/>
+        <Label Content="Category" HorizontalAlignment="Left" Margin="277,141,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" FontFamily="Arial"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="299,187,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" FontFamily="Arial"/>
+
+    </Grid>
+</Window>

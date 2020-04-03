@@ -1,0 +1,7 @@
+AUTHORIZE = 'Authorize'
+GET_WEATHER = 'get_weather'
+REMOVE_CITY = 'remove_city'
+ADD_ALERT = 'add_alert'
+STOP_ALERT = 'stop_alert'
+BAN = 'ban'
+UNBAN = 'unban'

@@ -1,0 +1,74 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## LR1"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "import { createInterface } from \"readline\";\n\nconst { question } = createInterface({ input: process.stdin, output: process.stdout });\n\nconst length = 10e6;\n\nconst generateList = () => {\n  return Array.from({ length }, () => Math.random());\n};\n\nconst getActualProbability = (p) => {\n  return generateList().filter((val) => val < p).length / length;\n};\n\nconst parseList = (listStr) => {\n  return listStr.split(\", \").map(Number);\n};\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Task 1"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "question(\"Expected probability: \", (p) => {\n  if (p) {\n    console.log(p);\n    console.log(\"Actual probability: \", getActualProbability(p));\n  }\n});\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Task 2"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "question(\"Expected probabilities list: \", (listStr) => {\n  if (listStr) {\n    console.log(`[ ${listStr} ]`);\n    const list = parseList(listStr).map(getActualProbability);\n    console.log(\"Actual probabilities list: \", list);\n  }\n});\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Task 3"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "question(\"p(A), p(B|A): \", (listStr) => {\n  if (listStr) {\n    console.log(listStr);\n\n    const [p_a, p_b_a] = parseList(listStr);\n    const p_not_a = 1 - p_a;\n\n    const expected = {\n      \"p(AB)\": p_a * p_b_a,\n      \"p(A!B)\": p_not_a * (1 - p_b_a),\n      \"p(!AB)\": (1 - p_b_a) * p_a,\n      \"p(!A!B)\": p_b_a * p_not_a\n    };\n\n    const actual = { \"p(AB)\": 0, \"p(A!B)\": 0, \"p(!AB)\": 0, \"p(!A!B)\": 0 };\n\n    for (let i = 0; i < length; i++) {\n      if (Math.random() < p_a) {\n        actual[Math.random() < p_b_a ? \"p(AB)\" : \"p(!AB)\"]++;\n      } else {\n        actual[Math.random() < p_b_a ? \"p(!A!B)\" : \"p(A!B)\"]++;\n      }\n    }\n\n    const resObj = Object.entries(actual).reduce(\n      (acc, [key, val]) => ({ ...acc, [key]: val / length }),\n      {}\n    );\n\n    console.table({ expected, actual: resObj });\n  }\n});\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Task 4"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "question(\"Expected probabilities list: \", (listStr) => {\n  if (listStr) {\n    console.log(`[ ${listStr} ]`);\n    \n    const list = parseList(listStr);\n    const actual = Array(list.length).fill(0);\n    const cumulativeList = list.map((sum => val => sum += val)(0))\n\n    generateList().forEach((p) => {\n      const index = cumulativeList.findIndex(sum => p < sum);\n      actual[index]++;\n    })\n\n    console.log(\"Actual probabilities list: \", actual.map((val) => val / length));\n  }\n})\n"
+            ],
+            "outputs": []
+        }
+    ]
+}

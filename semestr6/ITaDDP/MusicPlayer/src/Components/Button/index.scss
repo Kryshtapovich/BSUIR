@@ -1,0 +1,11 @@
+@import "~styles";
+
+.button {
+  @include scaling();
+  color: white;
+  background-color: $primary;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 1.5rem;
+}

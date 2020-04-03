@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("~fonts/Gilroy-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy-BoldItalic";
+  src: url("~fonts/Gilroy-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url("~fonts/Gilroy-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy-MediumItalic";
+  src: url("~fonts/Gilroy-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: url("~fonts/Gilroy-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy-SemiBoldItalic";
+  src: url("~fonts/Gilroy-SemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+}
+
+$primary: #0bb5b8;
+
+@mixin flex-block($type) {
+  display: flex;
+  flex-direction: $type;
+}
+
+@mixin scaling($scale: 1.2) {
+  cursor: pointer;
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+@mixin rotation($deg) {
+  cursor: pointer;
+  &:hover {
+    transform: rotate($deg);
+  }
+}
+
+@mixin scrollable() {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 0.5rem;
+    background: #d6d6d6;
+    margin: 0.5rem 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 0.5rem;
+  }
+}
+
+body {
+  position: relative;
+  margin: 0;
+}
+
+* {
+  font-family: "Gilroy-Medium";
+  box-sizing: border-box;
+  transition: gap 0.3s, padding 0.3s, width 0.3s, font-size 0.3s, transform 0.3s;
+}
+
+span {
+  cursor: default;
+}
+
+a {
+  font-family: "Gilroy-Medium";
+}

@@ -1,0 +1,9 @@
+USE DbmsProject
+GO
+CREATE PROCEDURE AddLog
+	@Info NVARCHAR(1000),
+	@Date SMALLDATETIME
+AS
+	INSERT INTO Log (Date, Info)
+	VALUES (@Date, @Info)
+GO

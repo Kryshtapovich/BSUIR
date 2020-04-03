@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<DataManagerOptions>
+    <ConnectionString>Data Source=LAPTOP-UHQH7B28\SQLEXPRESS01;Initial Catalog=AdventureWorks2019;Integrated Security=True</ConnectionString>
+    <ErrorConnectionString>Data Source=LAPTOP-UHQH7B28\SQLEXPRESS01;Initial Catalog=ErrorLogs;Integrated Security=True</ErrorConnectionString>
+    <SearchCriteria>
+        <Amount>45</Amount>
+        <SortParameter>Name</SortParameter>
+        <Order>Ascending</Order>
+    </SearchCriteria>
+    <FtpSourceFolder>E:\LR5\FTP\Source</FtpSourceFolder>
+</DataManagerOptions>

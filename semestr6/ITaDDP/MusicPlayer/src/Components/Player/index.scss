@@ -1,0 +1,83 @@
+@import "~styles";
+
+.player {
+  @include flex-block(row);
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  box-shadow: 0 -8px 12px -8px black;
+  border-radius: 1rem 1rem 0 0;
+
+  padding: 1rem;
+
+  @media (max-width: 650px) {
+    @include flex-block(column);
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+
+  &__info {
+    @include flex-block(row);
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  &__picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 0.5rem;
+    background-color: red;
+  }
+
+  &__song {
+    @include flex-block(column);
+    gap: 0.25rem;
+  }
+
+  &__buttons {
+    @include flex-block(row);
+    align-items: center;
+    gap: 2rem;
+
+    &--main {
+      @include flex-block(row);
+      align-items: center;
+      gap: 0.75rem;
+
+      @media (max-width: 650px) {
+        gap: 1rem;
+      }
+    }
+  }
+
+  &__button {
+    @include scaling();
+  }
+
+  &__duration {
+    @include flex-block(column);
+    width: 300px;
+    gap: 0.5rem;
+
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+  }
+
+  &__time-progress {
+    background-color: red;
+    height: 1rem;
+  }
+
+  &__timestamps {
+    @include flex-block(row);
+    justify-content: space-between;
+    font-size: 0.875rem;
+
+    @media (max-width: 650px) {
+      font-size: 0.75rem;
+    }
+  }
+}

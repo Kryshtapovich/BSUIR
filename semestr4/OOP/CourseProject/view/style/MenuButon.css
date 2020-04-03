@@ -1,0 +1,22 @@
+.button {
+    -fx-font-size: 16;
+    -fx-text-fill: #00e3bd;
+    -fx-background-color: transparent;
+    -fx-border-color: #0FFFFF;
+    -fx-border-width:  0 0 2 0;
+    -fx-blend-mode: color-dodge;
+}
+
+.button:hover {
+    -fx-text-fill: #0FFFFF;
+    -fx-font-size: 20;
+    -fx-background-color: transparent;
+    -fx-border-width:  0 0 5 0;
+}
+
+.button:pressed {
+    -fx-text-fill: #0FFFFF;
+    -fx-font-size: 14;
+    -fx-background-color: transparent;
+    -fx-border-width:  0 0 1 0;
+}

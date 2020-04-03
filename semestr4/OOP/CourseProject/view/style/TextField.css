@@ -1,0 +1,6 @@
+.text-field {
+    -fx-background-color: rgba(66, 141, 138, 0.44);
+    -fx-font-size: 14;
+    -fx-text-fill: #00e3bd;
+    -fx-font-style: italic;
+}

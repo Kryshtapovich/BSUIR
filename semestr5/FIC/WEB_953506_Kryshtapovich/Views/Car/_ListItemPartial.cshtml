@@ -1,0 +1,28 @@
+@model Car
+
+<div class='card m-2 p-1 text-center col-4'>
+  <img src="~/Images/@Model.Image" alt='NoImage' class="card-img-top" />
+  <div class="card-body">
+    <h5 class="card-title">
+      @Model.Name
+    </h5>
+    <p class="card-text">
+      @Model.Description
+    </p>
+    <div class="card-text badge badge-secondary">
+      <h6>@Model.Price $</h6>
+    </div>
+    @{
+      var request = ViewContext.HttpContext.Request;
+      var returnUrl = request.Path +
+      request.QueryString.ToUriComponent();
+    }
+
+    <p class="mt-2">
+      <a asp-controller="Cart" asp-action="Add" asp-route-id="@Model.Id" asp-route-returnUrl="@returnUrl"
+        class="btn btn-primary">
+        В корзину
+      </a>
+    </p>
+  </div>
+</div>

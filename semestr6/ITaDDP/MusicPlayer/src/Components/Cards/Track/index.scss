@@ -1,0 +1,82 @@
+@import "~styles";
+
+.track-card {
+  @include flex-block(row);
+  @include scaling(1.05);
+  box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.479);
+  border-radius: 0.5rem;
+
+  &__picture {
+    max-width: 120px;
+    width: 34%;
+    height: 100%;
+    background-color: red;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  &__right-block {
+    @include flex-block(column);
+    gap: 0.5rem;
+    flex: 1;
+    padding: 0.5rem;
+
+    .popup {
+      margin-left: auto;
+    }
+  }
+
+  &__info {
+    @include flex-block(column);
+  }
+
+  &__play-button {
+    @include scaling();
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.popup {
+  position: relative;
+  
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  &__image {
+    @include rotation(90deg);
+  }
+
+  &__image:hover + &__menu {
+    visibility: visible;
+  }
+
+  &__menu {
+    width: max-content;
+    @include flex-block(column);
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+
+    position: absolute;
+    top: 20px;
+    right: 0;
+
+    visibility: hidden;
+
+    background-color: white;
+    box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.479);
+
+    &:hover {
+      visibility: visible;
+    }
+  }
+
+  &__menu-item {
+    @include flex-block(row);
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+}

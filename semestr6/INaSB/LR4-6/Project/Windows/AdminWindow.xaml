@@ -1,0 +1,59 @@
+﻿<Window x:Class="DbmsProject.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DbmsProject"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Categories">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid Name="Categories" Margin="379,25,33,134" FontFamily="Arial" FontSize="14"/>
+                    <Button Name="UpdateCategory" Content="Update" HorizontalAlignment="Left" Margin="594,307,0,0" VerticalAlignment="Top" Height="30" Width="100" FontFamily="Arial" FontSize="14" Click="UpdateCategory_Click"/>
+                    <Button Name="AddCategory" Content="Add category" HorizontalAlignment="Left" Margin="93,307,0,0" VerticalAlignment="Top" Height="30" Width="90" FontFamily="Arial" FontSize="14" Click="AddCategory_Click"/>
+                    <Label Content="Name" HorizontalAlignment="Left" Margin="44,177,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14" RenderTransformOrigin="0.608,-0.66"/>
+                    <TextBox Name="CategoryName" HorizontalAlignment="Left" Margin="120,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="22" FontFamily="Arial" FontSize="14"/>
+                    <Button Name="GetCategories" Content="Get categories" HorizontalAlignment="Left" Margin="458,307,0,0" VerticalAlignment="Top" Height="30" Width="100" FontFamily="Arial" FontSize="14" Click="GetCategories_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Products">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Name="Products" Margin="10,10,10,149" Grid.ColumnSpan="2"/>
+                    <Button Name="UpdateProduct" Content="Update product" HorizontalAlignment="Left" Margin="485,304,0,0" VerticalAlignment="Top" Height="33" Width="99" Click="UpdateProduct_Click" Grid.ColumnSpan="2"/>
+                    <Button Name="AddProduct" Content="Add product" HorizontalAlignment="Left" Margin="222,304,0,0" VerticalAlignment="Top" Height="33" Width="99" Click="AddProduct_Click" Grid.ColumnSpan="2"/>
+                    <Button Name="DeleteProduct" Content="Delete product" HorizontalAlignment="Left" Margin="354,304,0,0" VerticalAlignment="Top" Height="33" Width="99" Click="DeleteProduct_Click" Grid.ColumnSpan="2"/>
+                    <Button Name="GetProducts" Content="Get products" HorizontalAlignment="Left" Margin="91,304,0,0" VerticalAlignment="Top" Height="33" Width="99" Click="GetProducts_Click" Grid.ColumnSpan="2" />
+                    <Button Name="Image" Content="Image" HorizontalAlignment="Left" Margin="610,304,0,0" VerticalAlignment="Top" Height="33" Width="99" Grid.ColumnSpan="2" Click="Image_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Stores">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="197*"/>
+                        <ColumnDefinition Width="597*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Name="Stores" Margin="107,25,33,134" FontFamily="Arial" FontSize="14" Grid.Column="1"/>
+                    <Button Name="AddStore" Content="AddStore" HorizontalAlignment="Left" Margin="93,307,0,0" VerticalAlignment="Top" Height="30" Width="90" FontFamily="Arial" FontSize="14" Click="AddStore_Click" />
+                    <Label Content="Name" HorizontalAlignment="Left" Margin="44,177,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14" RenderTransformOrigin="0.608,-0.66"/>
+                    <TextBox Name="StoreName" HorizontalAlignment="Left" Margin="120,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="22" FontFamily="Arial" FontSize="14" Grid.ColumnSpan="2"/>
+                    <Label Content="Address" HorizontalAlignment="Left" Margin="30,221,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14" RenderTransformOrigin="0.608,-0.66"/>
+                    <TextBox Name="Address" HorizontalAlignment="Left" Margin="120,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="22" FontFamily="Arial" FontSize="14" Grid.ColumnSpan="2"/>
+                    <Button Name="GetStores" Content="Get stores" HorizontalAlignment="Left" Margin="216,307,0,0" VerticalAlignment="Top" Height="30" Width="100" FontFamily="Arial" FontSize="14" Click="GetStores_Click" Grid.Column="1" />
+                    <Button Name="UpdateStore" Content="Update" HorizontalAlignment="Left" Margin="352,307,0,0" VerticalAlignment="Top" Height="30" Width="100" FontFamily="Arial" FontSize="14" Click="UpdateStore_Click" Grid.Column="1" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Logs">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid Name="Logs" Margin="10,10,10,149" IsReadOnly="True"/>
+                    <Button Name="GetLogs" Content="Get logs" HorizontalAlignment="Center" Margin="0,302,0,0" VerticalAlignment="Top" Height="30" Width="100" FontFamily="Arial" FontSize="14" Click="GetLogs_Click" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

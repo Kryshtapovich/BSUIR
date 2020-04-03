@@ -1,0 +1,23 @@
+@import "~styles";
+
+.tracks {
+  @include scrollable();
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 124px;
+  gap: 8% 3%;
+  width: 100%;
+
+  padding: 1.5rem;
+
+  @media (max-width: 1366px) {
+    row-gap: calc(4% + 12px);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 850px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 580px) {
+    grid-template-columns: auto;
+  }
+}

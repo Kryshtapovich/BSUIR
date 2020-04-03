@@ -1,0 +1,49 @@
+﻿<Window x:Class="DbmsProject.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DbmsProject"
+        mc:Ignorable="d"
+        Title="UserWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Products">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Margin="0,5,10,153" Name="ProductsGrid" Grid.Column="1" IsReadOnly="True" HorizontalAlignment="Right" Width="605" />
+                    <Button Name="CreateOrder" Content="Create order" HorizontalAlignment="Left" Margin="333,289,0,0" VerticalAlignment="Top" Height="36" Width="112" Click="CreateOrder_Click" Grid.Column="1"/>
+                    <Button Name="ProductInfo" Content="Product info" HorizontalAlignment="Left" Margin="519,289,0,0" VerticalAlignment="Top" Height="36" Width="112" Click="ProductInfo_Click" Grid.Column="1"/>
+                    <ComboBox Name="Categories" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="42,64,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Category" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="69,25,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Arial"/>
+                    <Button Name="Sort" Content="Sort" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="63,129,0,0" VerticalAlignment="Top" Height="33" Width="79" Click="Sort_Click"/>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Orders">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid Name="OrdersGrid" Margin="89,10,89,103" IsReadOnly="True"/>
+                    <Button Name="GetOrders" Content="Get orders" HorizontalAlignment="Center" Margin="0,333,0,0" VerticalAlignment="Top" Height="30" Width="116" Click="GetOrders_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Info" Height="20" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="FirstName" HorizontalAlignment="Left" Margin="258,47,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Arial" Height="31" Width="92"/>
+                    <Label Content="LastName" HorizontalAlignment="Left" Margin="258,96,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Arial" Height="32" Width="92"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="288,145,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Arial" Height="32" Width="56"/>
+                    <Label Content="Password" HorizontalAlignment="Left" Margin="260,196,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Arial" Height="31" Width="90"/>
+                    <TextBox Name="FisrtName" HorizontalAlignment="Left" Margin="382,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="14" FontFamily="Arial" Height="22"/>
+                    <TextBox Name="LastName" HorizontalAlignment="Left" Margin="382,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="14" FontFamily="Arial" Height="22"/>
+                    <TextBox Name="Email" HorizontalAlignment="Left" Margin="382,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="14" FontFamily="Arial" Height="22"/>
+                    <TextBox Name="Password" HorizontalAlignment="Left" Margin="382,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="14" FontFamily="Arial" Height="21"/>
+                    <Button Name="Update" Content="Update" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Height="28" Width="111" Click="Update_Click"/>
+
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

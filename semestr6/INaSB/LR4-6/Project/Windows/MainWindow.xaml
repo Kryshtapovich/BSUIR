@@ -1,0 +1,30 @@
+﻿<Window x:Class="DbmsProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DbmsProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="59,127,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14" Height="26" Width="45"/>
+        <TextBox Name="Login" HorizontalAlignment="Left" Margin="104,130,0,0" TextWrapping="NoWrap" AcceptsReturn="False" VerticalAlignment="Top" Width="200" Height="20" FontFamily="Arial" FontSize="14" VerticalContentAlignment="Center"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="33,175,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14" RenderTransformOrigin="-0.042,-0.458" Height="26" Width="71"/>
+        <Label Name="Error" HorizontalAlignment="Left" Margin="198,0,0,0" VerticalAlignment="Center" Foreground="Red" FontWeight="Medium"/>
+        <TextBox Name="Password" HorizontalAlignment="Left" Margin="104,178,0,0" TextWrapping="NoWrap" AcceptsReturn="False" VerticalAlignment="Top" Width="200" Height="20" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <Button Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="150,237,0,0" VerticalAlignment="Top" Height="32" Width="108" FontFamily="Arial" FontSize="14" Click="LoginButton_Click"/>
+        <Label Content="FirstName" HorizontalAlignment="Left" Margin="441,72,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14" Height="26" Width="75"/>
+        <TextBox Name="FirstName" HorizontalAlignment="Left" Margin="513,75,0,0" TextWrapping="NoWrap" AcceptsReturn="False" VerticalAlignment="Top" Width="200" Height="20" FontFamily="Arial" FontSize="14" VerticalContentAlignment="Center"/>
+        <Label Content="LastName" HorizontalAlignment="Left" Margin="439,114,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14" RenderTransformOrigin="-0.042,-0.458" Height="26" Width="74"/>
+        <TextBox Name="LastName" HorizontalAlignment="Left" Margin="513,117,0,0" TextWrapping="NoWrap" AcceptsReturn="False" VerticalAlignment="Top" Width="200" Height="20" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="468,154,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14" Height="26" Width="45"/>
+        <TextBox Name="RegisterEmail" HorizontalAlignment="Left" Margin="513,157,0,0" TextWrapping="NoWrap" AcceptsReturn="False" VerticalAlignment="Top" Width="200" Height="20" FontFamily="Arial" FontSize="14" VerticalContentAlignment="Center"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="442,0,0,0" VerticalAlignment="Center" FontFamily="Arial" FontSize="14" RenderTransformOrigin="-0.042,-0.458" Height="26" Width="71"/>
+        <TextBox Name="RegisterPassword" HorizontalAlignment="Left" Margin="513,0,0,0" TextWrapping="NoWrap" AcceptsReturn="False" VerticalAlignment="Center" Width="200" Height="20" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <Button Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Margin="559,258,0,0" VerticalAlignment="Top" Height="32" Width="108" FontFamily="Arial" FontSize="14" Click="RegisterButton_Click"/>
+    </Grid>
+</Window>

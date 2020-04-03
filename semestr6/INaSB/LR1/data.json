@@ -1,0 +1,4 @@
+{
+  "caesarData": { "key": 13, "text": "grfg", "operation": "decrypt" },
+  "vigenereData": { "key": "lemon", "text": "attackatdawn", "operation": "encrypt" }
+}

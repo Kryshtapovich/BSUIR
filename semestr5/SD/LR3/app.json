@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "Notes",
+    "slug": "Notes",
+    "version": "1.0.0",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

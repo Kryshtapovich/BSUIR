@@ -1,0 +1,7 @@
+USE DbmsProject
+GO 
+CREATE PROCEDURE DeleteProduct
+	@ProductId UNIQUEIDENTIFIER
+AS
+	DELETE FROM Product WHERE Id = @ProductId
+GO

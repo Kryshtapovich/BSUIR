@@ -1,0 +1,88 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## LR2"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "import { Plotly } from 'node-kernel';\nimport { createInterface } from \"readline\";\n\nconst { question } = createInterface({ input: process.stdin, output: process.stdout });\n\nconst getMx = (data) => {\n  return data.reduce((sum, x) => (sum += x), 0) / data.length;\n};\n\nconst getDx = (data) => {\n  return data.reduce((sum, x) => (sum += x ** 2), 0) / data.length - getMx(data) ** 2;\n};\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Task 1"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const getDensity = (p, a, b) => {\n  if (a < p) return (p - a) / (b - a);\n  else if (p > b) return 1;\n  else return 0;\n};\n\nconst generateUniformDistribution = (a, b, length) => {\n  return Array.from({ length }, () => (b - a) * Math.random() + a);\n};\n\nconst divide = (left, right, length) => {\n  const delta = (right - left) / length;\n  return Array.from({ length }, (_, i) => [left + delta * i, left + delta * (i + 1)]);\n};\n\nconst getChi = (data, a, b, amount = 40) => {\n  const { length } = data;\n  return (\n    divide(a, b, amount)\n      .reduce((acc, [left, right]) => {\n        const truth = getDensity(right, a, b) - getDensity(left, a, b);\n        if (truth) {\n          const est = data.filter((x) => x >= left && x <= right).length / length;\n          return [...acc, (est - truth) ** 2 / truth];\n        }\n      }, [])\n      .reduce((sum, p) => (sum += p), 0) * length\n  );\n};\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let a, b;\nquestion(\"a, b: \", (str) => {\n  if (str) {\n    console.log(str);\n    const bounds = str.split(\", \").map(Number);\n    a = bounds[0];\n    b = bounds[1];\n  }\n});\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const data = generateUniformDistribution(a, b, 1e6);\n\nconst mx = {\n  actual: getMx(data),\n  theoretical: (a + b) / 2\n};\n\nconst dx = {\n  actual: getDx(data),\n  theoretical: (b - a) ** 2 / 12\n};\n\nconsole.table({ \"M[x]\": mx, \"D[X]\": dx });\nPlotly.newPlot(\"\", [{ x: data, type: \"histogram\" }]);\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const mxs = [];\nconst dxs = [];\nconst chis = [];\n\nfor (let i = 0; i < 1e3; i++) {\n  const data = generateUniformDistribution(a, b, 1e3);\n  mxs.push(getMx(data));\n  dxs.push(getDx(data));\n  chis.push(getChi(data, a, b));\n}\n\nPlotly.newPlot(\"\", [{ x: mxs, type: \"histogram\" }], { title: \"M[X]\" });\nPlotly.newPlot(\"\", [{ x: dxs, type: \"histogram\" }], { title: \"D[X]\" });\nPlotly.newPlot(\"\", [{ x: chis, type: \"histogram\" }], { title: \"Chi\" });\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Task 2"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const factorial = (num) => {\n  return num === 0 ? 1 : num * factorial(num - 1);\n};\n\nconst binom = (n, k) => {\n  return factorial(n) / (factorial(n - k) * factorial(k));\n};\n\nconst accumulate = (acc) => {\n  return (value) => (acc += value);\n};\n\nconst generateBinomialDistribution = (n, p, length) => {\n  const range = Array.from({ length: n + 1 }, (_, i) => i);\n  const data = Array.from({ length: n + 1 }, (_, k) => {\n    return binom(n, k) * p ** k * (1 - p) ** (n - k);\n  }).map(accumulate(0));\n\n  return Array.from({ length }, () => Math.random()).map(\n    (x) => range[data.findIndex((y) => x <= y)]\n  );\n};\n\nconst compare = (range, data, left, right) => {\n  const i = range.indexOf(left);\n  if (i) {\n    return data[range.indexOf(right)] - data[range.indexOf(i - 1)];\n  } else {\n    return data[range.indexOf(right)];\n  }\n};\n\nconst getChi = (data, n, p) => {\n  const { length } = data;\n  const range = Array.from({ length: n + 1 }, (_, i) => i);\n  const generated = Array.from({ length: n + 1 }, (_, k) => {\n    return binom(n, k) * p ** k * (1 - p) ** (n - k);\n  }).map(accumulate(0));\n\n  return (\n    range\n      .sort((a, b) => a - b)\n      .map((x) => [x, x])\n      .reduce((acc, [left, right]) => {\n        const truth = compare(range, generated, left, right);\n        if (truth) {\n          const est = data.filter((x) => x >= left && x <= right).length / length;\n          return [...acc, (est - truth) ** 2 / truth];\n        }\n      })\n      .reduce((sum, p) => (sum += p), 0) * length\n  );\n};\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let n, p;\nquestion(\"n, p: \", (str) => {\n  if (str) {\n    console.log(str);\n    const bounds = str.split(\", \").map(Number);\n    n = bounds[0];\n    p = bounds[1];\n  }\n});\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const data = generateBinomialDistribution(n, p, 1e6);\n\nconst mx = {\n  actual: getMx(data),\n  theoretical: n * p\n};\n\nconst dx = {\n  actual: getDx(data),\n  theoretical: n * p * (1 - p)\n};\n\nconsole.table({ \"M[x]\": mx, \"D[X]\": dx });\nPlotly.newPlot(\"\", [{ x: data, type: \"histogram\" }]);\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const mxs = [];\nconst dxs = [];\nconst chis = [];\n\nfor (let i = 0; i < 1e3; i++) {\n  const data = generateBinomialDistribution(n, p, 1e3);\n  mxs.push(getMx(data));\n  dxs.push(getDx(data));\n  chis.push(getChi(data, n, p));\n}\n\nPlotly.newPlot(\"\", [{ x: mxs, type: \"histogram\" }], { title: \"M[X]\" });\nPlotly.newPlot(\"\", [{ x: dxs, type: \"histogram\" }], { title: \"D[X]\" });\nPlotly.newPlot(\"\", [{ x: chis, type: \"histogram\" }], { title: \"Chi\" });\n"
+            ],
+            "outputs": []
+        }
+    ]
+}

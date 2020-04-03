@@ -1,0 +1,10 @@
+{
+  "vectorC": [1, 1],
+  "matrixA": [
+    [5, 9],
+    [9, 5]
+  ],
+  "vectorB": [63, 63],
+  "vectorDNeg": [1, 1],
+  "vectorDPos": [6, 6]
+}

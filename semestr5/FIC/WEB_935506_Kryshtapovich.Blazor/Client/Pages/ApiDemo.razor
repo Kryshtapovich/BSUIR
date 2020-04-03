@@ -1,0 +1,27 @@
+﻿@using WEB_935506_Kryshtapovich.Blazor.Client.Components
+
+@page "/apidemo"
+@inject HttpClient client
+
+<div class="container">
+    <CarList @bind-Cars="@Cars" SelectedObjectChanged="ShowDetails"></CarList>
+    <CarDetails @bind-Car="SelectedCar"></CarDetails>
+</div>
+
+@code{
+    [Parameter]
+    public IEnumerable<ListViewModel> Cars { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Cars = await client.GetFromJsonAsync<IEnumerable<ListViewModel>>("api/Cars/");
+    }
+
+    [Parameter]
+    public DetailsViewModel SelectedCar { get; set; }
+
+    private async Task ShowDetails(int id)
+    {
+        SelectedCar = await client.GetFromJsonAsync<DetailsViewModel>($"api/Cars/{id}");
+    }
+}

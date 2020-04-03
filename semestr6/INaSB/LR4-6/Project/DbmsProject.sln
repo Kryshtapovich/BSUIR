@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbmsProject", "DbmsProject.csproj", "{9CD96CB1-B5FD-4264-9126-95C7A0115448}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "..\Installer\Installer.vdproj", "{090CDC4E-D544-4EAE-B77B-3131862C34C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CD96CB1-B5FD-4264-9126-95C7A0115448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CD96CB1-B5FD-4264-9126-95C7A0115448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CD96CB1-B5FD-4264-9126-95C7A0115448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CD96CB1-B5FD-4264-9126-95C7A0115448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090CDC4E-D544-4EAE-B77B-3131862C34C4}.Debug|Any CPU.ActiveCfg = Debug
+		{090CDC4E-D544-4EAE-B77B-3131862C34C4}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45BB18B2-8626-4479-B81A-A5D7C3B0888F}
+	EndGlobalSection
+EndGlobal

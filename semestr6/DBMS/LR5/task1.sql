@@ -1,0 +1,20 @@
+CREATE TABLE Table1(
+    id       NUMBER PRIMARY KEY, 
+    column1  VARCHAR(20)
+);
+
+CREATE TABLE Table2(
+    id         NUMBER PRIMARY KEY, 
+    column1    DATE, 
+    TABLE1_FK  NUMBER,
+    CONSTRAINT fk_Table2_Table1 
+        FOREIGN KEY(TABLE1_FK) REFERENCES Table1(id) ON DELETE CASCADE
+);
+
+CREATE TABLE Table3(
+    id         NUMBER PRIMARY KEY,
+    column1    NUMBER,
+    TABLE2_FK  NUMBER,
+    CONSTRAINT fk_TABLE3_TABLE2 
+        FOREIGN KEY (TABLE2_FK) REFERENCES Table2(id) ON DELETE CASCADE
+);

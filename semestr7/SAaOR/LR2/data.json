@@ -1,0 +1,15 @@
+{
+  "start": 0,
+  "finish": 5,
+  "graph": [
+    { "source": 0, "dest": 1, "weight": 1, "color": "gray" },
+    { "source": 0, "dest": 2, "weight": 2, "color": "white" },
+    { "source": 1, "dest": 2, "weight": 2, "color": "white" },
+    { "source": 1, "dest": 4, "weight": 1, "color": "white" },
+    { "source": 2, "dest": 3, "weight": 1, "color": "white" },
+    { "source": 3, "dest": 4, "weight": 2, "color": "white" },
+    { "source": 3, "dest": 5, "weight": 1, "color": "white" },
+    { "source": 4, "dest": 5, "weight": 2, "color": "white" },
+    { "source": 5, "color": "white" }
+  ]
+}

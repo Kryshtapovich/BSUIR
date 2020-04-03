@@ -1,0 +1,15 @@
+﻿<Window x:Class="DbmsProject.Windows.StoreSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DbmsProject.Windows"
+        mc:Ignorable="d"
+        Title="StoreChoose" Height="319" Width="606">
+    <Grid>
+        <DataGrid Name="Stores" Margin="70,10,70,80"/>
+        <Button Name="Buy" Content="Buy" HorizontalAlignment="Left" Margin="338,239,0,0" VerticalAlignment="Top" Height="30" Width="103" Click="Buy_Click"/>
+        <Button x:Name="GetStores" Content="Get stores" HorizontalAlignment="Left" Margin="171,239,0,0" VerticalAlignment="Top" Height="30" Width="103" Click="GetStores_Click"/>
+
+    </Grid>
+</Window>

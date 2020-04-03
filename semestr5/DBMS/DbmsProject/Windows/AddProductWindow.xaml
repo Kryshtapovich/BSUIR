@@ -1,0 +1,23 @@
+﻿<Window x:Class="DbmsProject.Windows.AddProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DbmsProject.Windows"
+        mc:Ignorable="d"
+        Title="AddProductWindow" Height="339" Width="408">
+    <Grid>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="83,25,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14"/>
+        <TextBox Name="Name" HorizontalAlignment="Left" Margin="147,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="14"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="50,180,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14"/>
+        <TextBox Name="Description" HorizontalAlignment="Left" Margin="147,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontFamily="Arial" FontSize="14" Height="67"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="88,56,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14"/>
+        <TextBox Name="Price" HorizontalAlignment="Left" Margin="147,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="14"/>
+        <Label Content="Category" HorizontalAlignment="Left" Margin="63,93,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14"/>
+        <ComboBox Name="Category" HorizontalAlignment="Left" Margin="147,97,0,0" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="14"/>
+        <Label Content="Store" HorizontalAlignment="Left" Margin="86,134,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14"/>
+        <ComboBox Name="Store" HorizontalAlignment="Left" Margin="147,138,0,0" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="14"/>
+        <Button Name="Add" Content="Add" HorizontalAlignment="Left" Margin="128,267,0,0" VerticalAlignment="Top" Height="27" Width="105" Click="Add_Click"/>
+
+    </Grid>
+</Window>

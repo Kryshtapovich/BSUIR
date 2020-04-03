@@ -1,0 +1,33 @@
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ExtCtrls.hpp>
+
+#ifndef unitH
+#define unitH
+
+class TForm1 : public TForm
+{
+__published:
+	TLabel *Label1;
+	TEdit *Edit1;
+	TButton *Button1;
+	TButton *Button2;
+	TButton *Button3;
+	TButton *Button4;
+	TMemo *Memo1;
+	TEdit *Edit2;
+	TLabel *Label2;
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall Button3Click(TObject *Sender);
+	void __fastcall Button4Click(TObject *Sender);
+private:
+public:	
+	__fastcall TForm1(TComponent* Owner);
+};
+
+extern PACKAGE TForm1 *Form1;
+
+#endif

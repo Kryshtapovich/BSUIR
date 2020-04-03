@@ -1,0 +1,12 @@
+﻿header,
+footer {
+  background-color: #343a40;
+}
+
+.nav-color {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.inputs {
+  margin-left: 17%;
+}

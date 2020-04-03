@@ -1,0 +1,12 @@
+.vscode/
+.idea/
+
+*.DS_Store
+
+*obj/
+*bin/
+
+*node_modules/
+__pycache__/
+
+yarn.lock

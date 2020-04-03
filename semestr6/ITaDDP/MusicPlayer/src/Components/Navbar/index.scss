@@ -1,0 +1,43 @@
+@import "~styles";
+
+.navbar {
+  @include flex-block(row);
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 8px 12px -8px black;
+  border-radius: 0 0 1rem 1rem;
+
+  padding: 1rem;
+  gap: 1rem;
+
+  @media (max-width: 690px) {
+    @include flex-block(column);
+    align-items: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  @media (max-width: 690px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    & > *:last-child {
+      grid-column: 1/3;
+    }
+  }
+
+  .text-input {
+    flex: 0.8;
+  }
+}
+
+.tabs {
+  @include flex-block(row);
+  justify-content: space-between;
+  width: 50%;
+
+  @media (max-width: 690px) {
+    justify-content: center;
+    gap: 10%;
+    width: 100%;
+  }
+}

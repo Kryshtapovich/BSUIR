@@ -1,0 +1,12 @@
+@import "~styles";
+
+.page-container {
+  @include flex-block(column);
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  
+  .player {
+    margin-top: auto;
+  }
+}

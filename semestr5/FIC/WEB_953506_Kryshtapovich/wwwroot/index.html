@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Лабораторная работа 1</title>
+  <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <link href="lib/font-awesome/css/all.css" rel="stylesheet" />
+  <link href="css/site.css" rel="stylesheet" />
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">WebLabsV06</a>\
+
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Лб 1</a>
+          <a class="nav-item nav-link" href="#">Каталог</a>
+          <a class="nav-item nav-link" href="#">Администрирование</a>
+        </div>
+
+        <a href="#" class="navbar-text ml-auto">
+          00,0 руб <i class="fas fa-shopping-cart nav-color"></i> (0)
+        </a>
+
+        <div class="dropdown ml-4 nav-color">
+          <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <img src="images/user.svg" width="30" alt="User" class="rounded" />
+          </div>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-item-text">
+              <img src="images/user.svg" width="50" alt="User" class="rounded" />
+              user@mail.ru
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Мои товары</a>
+            <a class="dropdown-item" href="#">Log out</a>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Лабораторная работа 1</h1>
+    <div>
+      <h2>Список</h2>
+      <ol type="A">
+        <li>элемент 1 списка</li>
+        <li>элемент 2 списка</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <div>
+      <h2>Форма</h2>
+      <form method="POST">
+        <fieldset class="form-group inputs">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="firstCheckbox" id="firstCheckbox">
+            <label class="form-check-label" for="firstCheckbox">
+              Чек-бокс 1
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="secondCheckbox" id="secondCheckbox">
+            <label class="form-check-label" for="secondCheckbox">
+              Чек-бокс 2
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group inputs" id="radioGroup">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="radioGroup" id="fisrtRadio" value="option1" checked>
+            <label class="form-check-label" for="fisrtRadio">
+              Радио-1
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="radioGroup" id="secondRadio" value="option2">
+            <label class="form-check-label" for="secondRadio">
+              Радио-2
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="radioGroup" id="thirdRadio" value="option3">
+            <label class="form-check-label" for="thirdRadio">
+              Радио-3
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Логин:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" name="login" id="login" placeholder="Введите имя">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="password" class="col-sm-2 col-form-label">Пароль:</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" name="password" id="password" placeholder="Введите пароль">
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Отправить</button>
+          </div>
+        </fieldset>
+
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span class="nav-color">
+        <div class="navbar navbar-dark navbar-expand-md bg-dark">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="http://www.facebook.com">
+              <i class="fab fa-facebook-f fa-2x"></i>
+            </a>
+            <a class="nav-item nav-link" href="http://www.vk.com">
+              <i class="fab fa-vk fa-2x"></i>
+            </a>
+            <a class="nav-item nav-link" href="http://www.twitter.com">
+              <i class="fab fa-twitter fa-2x"></i>
+            </a>
+          </div>
+        </div>
+      </span>
+    </div>
+  </footer>
+</body>
+
+</html>

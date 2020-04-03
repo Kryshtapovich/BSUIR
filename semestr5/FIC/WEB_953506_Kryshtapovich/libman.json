@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "font-awesome@5.15.4",
+      "destination": "wwwroot/lib/font-awesome/"
+    },
+    {
+      "library": "bs-custom-file-input@1.3.4",
+      "destination": "wwwroot/bs-custom-file-input/"
+    }
+  ]
+}
